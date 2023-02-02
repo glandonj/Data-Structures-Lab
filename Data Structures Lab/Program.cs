@@ -1,9 +1,15 @@
-﻿Console.WriteLine("Hello and welcome to the Word Mirror, which reverses anything you submit.");
-Console.Write("Please enter a word: ");
+﻿Console.WriteLine("Hello and welcome to the Word Jumbler, which reverses any single word you submit.");
+Console.Write("Please enter a word or phrase: ");
 string input = Console.ReadLine().Trim();
+string[] wordlist = input.Split(" ");
 
-Console.WriteLine(StringReverse(input));
+foreach (string word in wordlist)
+{
+    Console.Write($"{StringReverse(word)} ");
+}
 
+
+//method
 static string StringReverse(string input)
 {
     Stack<char> myStack = new Stack<char>();
@@ -18,5 +24,7 @@ static string StringReverse(string input)
     }
     return reverseinput;
 }
+
+
 
 Console.ReadLine();
